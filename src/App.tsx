@@ -1,5 +1,6 @@
 import './style.scss'
 import IMG from '../public/logo512.png'
+import { Button } from '@components'
 
 export const App = () => {
   return (
@@ -10,6 +11,7 @@ export const App = () => {
       <h2>{process.env.name}</h2>
       <h3>Test .env: {process.env.REACT_APP_TEST_ENV}</h3>
       <h3>Test .env.*: {process.env.REACT_APP_API_KEY}</h3>
+      <Button />
     </>
   )
 }

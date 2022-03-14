@@ -2,39 +2,23 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const miniCss = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const {
+  cssLoader,
+  babelLoader,
+  fontsLoader,
+  resourceLoader,
+  tsLoader,
+} = require('./loaders')
 
 module.exports = {
-  entry: path.resolve(__dirname, '..', './src/index.tsx'),
+  entry: path.resolve(__dirname, '../src', 'index.tsx'),
   resolve: {
+    plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
-    rules: [
-      {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: '[path][name].[hash][ext][query]',
-        },
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: 'asset/inline',
-      },
-    ],
+    rules: [babelLoader, cssLoader, resourceLoader, fontsLoader, tsLoader],
   },
   output: {
     path: path.resolve(__dirname, '..', './build'),
@@ -48,7 +32,7 @@ module.exports = {
       filename: 'style.css',
     }),
     new Dotenv({
-      path: path.resolve('.env'),
+      path: '.env',
     }),
   ],
   stats: 'errors-only',
