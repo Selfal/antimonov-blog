@@ -1,4 +1,4 @@
-module.exports = (sourceMap = false) => ({
+export const cssLoader = (sourceMap = false) => ({
   test: /\.(sa|sc|c)ss$/,
   use: [
     'style-loader',

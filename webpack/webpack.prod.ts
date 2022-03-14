@@ -1,5 +1,5 @@
-const Dotenv = require('dotenv-webpack')
-const { tsLoader, cssLoader } = require('./loaders')
+import Dotenv from 'dotenv-webpack'
+import { tsLoader, cssLoader } from './loaders'
 
 module.exports = {
   mode: 'production',

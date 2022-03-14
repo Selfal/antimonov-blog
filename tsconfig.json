@@ -8,7 +8,7 @@
       "@components": ["src/components"]
     },
     "target": "ES5",
-    "module": "ESNext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",

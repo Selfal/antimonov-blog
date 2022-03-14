@@ -1,6 +1,6 @@
-const ReactRefrehWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
-const { tsLoader, cssLoader } = require('./loaders')
+import ReactRefrehWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
+import { tsLoader, cssLoader } from './loaders'
 
 module.exports = {
   mode: 'development',

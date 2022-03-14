@@ -1,11 +1,11 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const miniCss = require('mini-css-extract-plugin')
-const Dotenv = require('dotenv-webpack')
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
-const { babelLoader, fontsLoader, resourceLoader } = require('./loaders')
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import miniCss from 'mini-css-extract-plugin'
+import Dotenv from 'dotenv-webpack'
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import { babelLoader, fontsLoader, resourceLoader } from './loaders'
 
-module.exports = {
+export default {
   entry: path.resolve(__dirname, '../src', 'index.tsx'),
   resolve: {
     plugins: [new TsconfigPathsPlugin()],

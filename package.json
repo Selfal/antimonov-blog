@@ -15,8 +15,8 @@
   "homepage": "https://github.com/Selfal/antimonov-blog#readme",
   "scripts": {
     "clean": "rimraf build",
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
-    "build": "webpack --config webpack/webpack.config.js --env env=prod",
+    "start": "webpack serve --config webpack/webpack.config.ts --env env=dev",
+    "build": "webpack --config webpack/webpack.config.ts --env env=prod",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "check-types": "tsc --pretty --noEmit",
@@ -74,6 +74,7 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "ts-loader": "^9.2.8",
+    "ts-node": "^10.7.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.6.2",
     "webpack": "^5.70.0",

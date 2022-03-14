@@ -1,4 +1,4 @@
-module.exports = {
+export const babelLoader = {
   test: /\.(ts|js)x?$/,
   exclude: /node_modules/,
   use: [
