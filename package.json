@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/Selfal/antimonov-blog#readme",
   "scripts": {
+    "clean": "rimraf build",
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,9 +22,11 @@
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "check-lint": "eslint \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "check-style": "stylelint \"./src/**/*.scss\"",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:style": "stylelint --fix \"./src/**/*.scss\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build"
+    "test-all": "yarn check-format && yarn check-lint && yarn check-style && yarn check-types && yarn build"
   },
   "keywords": [],
   "dependencies": {

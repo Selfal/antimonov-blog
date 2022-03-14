@@ -1,4 +1,5 @@
 const Dotenv = require('dotenv-webpack')
+const { tsLoader, cssLoader } = require('./loaders')
 
 module.exports = {
   mode: 'production',
@@ -8,4 +9,7 @@ module.exports = {
       path: '.env.production',
     }),
   ],
+  module: {
+    rules: [tsLoader('tsconfig.prod.json'), cssLoader(false)],
+  },
 }

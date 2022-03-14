@@ -7,7 +7,7 @@ echo '🏗️👷 Styling, testing and building your project before committing'
 yarn check-format ||
 (
   echo '🤢🤮🤢🤮 Prettier Check Failed 🤢🤮🤢🤮
-    Run npm run format, add changes and try commit again.';
+    Run yarn format, add changes and try commit again.';
   false;
 )
 
@@ -15,6 +15,13 @@ yarn check-format ||
 yarn check-lint ||
 (
   echo '😤🏀👋😤 ESLint Check Failed 😤🏀👋😤 
+    Make the required changes listed above, add changes and try to commit again.'
+  false; 
+)
+
+yarn check-style || 
+(
+  echo '😤🏀👋😤 Stylelint Check Failed 😤🏀👋😤 
     Make the required changes listed above, add changes and try to commit again.'
   false; 
 )

@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "rootDir": "./src",
+    "outDir": "./build",
     "paths": {
       "@/*": ["src/*"],
       "@components": ["src/components"]
@@ -16,8 +18,17 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": false,
+    "checkJs": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/*.js"]
+  "include": ["src/**/*", "typings/**/*.d.ts"],
+  "exclude": ["src/**/*.spec.ts", "node_modules"]
 }

@@ -3,13 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const miniCss = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
-const {
-  cssLoader,
-  babelLoader,
-  fontsLoader,
-  resourceLoader,
-  tsLoader,
-} = require('./loaders')
+const { babelLoader, fontsLoader, resourceLoader } = require('./loaders')
 
 module.exports = {
   entry: path.resolve(__dirname, '../src', 'index.tsx'),
@@ -18,7 +12,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
-    rules: [babelLoader, cssLoader, resourceLoader, fontsLoader, tsLoader],
+    rules: [babelLoader, resourceLoader, fontsLoader],
   },
   output: {
     path: path.resolve(__dirname, '..', './build'),
@@ -32,7 +26,7 @@ module.exports = {
       filename: 'style.css',
     }),
     new Dotenv({
-      path: '.env',
+      silent: true,
     }),
   ],
   stats: 'errors-only',

@@ -1,5 +1,6 @@
 const ReactRefrehWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const { tsLoader, cssLoader } = require('./loaders')
 
 module.exports = {
   mode: 'development',
@@ -14,4 +15,7 @@ module.exports = {
       path: '.env.development',
     }),
   ],
+  module: {
+    rules: [tsLoader('tsconfig.json'), cssLoader(true)],
+  },
 }
