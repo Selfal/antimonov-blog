@@ -22,7 +22,7 @@
     "test:format": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "test:lint": "eslint \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "test:style": "stylelint \"./src/**/*.scss\"",
-    "test": "npm-run-all clean test:* build",
+    "test": "npm-run-all --silent clean test:* build",
     "fix:lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "fix:style": "stylelint --fix \"./src/**/*.scss\"",
     "fix": "npm-run-all fix:*",
