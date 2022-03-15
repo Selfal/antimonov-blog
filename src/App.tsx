@@ -9,7 +9,7 @@ export const App = () => {
       <img src={IMG} alt="logo" />
       <h2>{process.env.NODE_ENV}</h2>
       <h2>{process.env.name}</h2>
-      <h3>Test .env: {process.env.REACT_APP_TEST}</h3>
+      <h3>Test .env: {process.env.REACT_APP_ENV}</h3>
       <h3>Test .env.*: {process.env.REACT_APP_MODE}</h3>
       <Button />
     </>

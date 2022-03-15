@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new ReactRefrehWebpackPlugin(),
     new Dotenv({
-      path: '.env.development',
+      path: 'env/.env.development',
     }),
   ],
   module: {
