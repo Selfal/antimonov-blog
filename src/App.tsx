@@ -11,7 +11,7 @@ export const App = () => {
       <h2>{process.env.name}</h2>
       <h3>Test .env: {process.env.REACT_APP_ENV}</h3>
       <h3>Test .env.*: {process.env.REACT_APP_MODE}</h3>
-      <Button />
+      <Button>Hello</Button>
     </>
   )
 }

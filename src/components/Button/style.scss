@@ -1,0 +1,51 @@
+$primary-bg: #005eff;
+$ghost-bg: #222a40;
+$secondary-border: 1px solid #4d4d4d;
+$white: #fff;
+$light-gray: #ededed;
+
+.button {
+  border: none;
+  border-radius: 6px;
+
+  // VIEW
+  &--primary {
+    background: $primary-bg;
+    color: $white;
+  }
+
+  &--secondary {
+    background: transparent;
+    border: $secondary-border;
+    color: $light-gray;
+  }
+
+  &--ghost {
+    background: $ghost-bg;
+    color: $white;
+  }
+
+  &--clear {
+    background: transparent;
+    color: $white;
+  }
+
+  // SIZE
+  &--small {
+    padding: 0 16px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &--medium {
+    padding: 0 20px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  &--large {
+    padding: 0 24px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
