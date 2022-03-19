@@ -5,7 +5,8 @@
     "outDir": "./build",
     "paths": {
       "@/*": ["src/*"],
-      "@components": ["src/components"]
+      "@components": ["src/components"],
+      "@icons/*": ["src/icons/*"]
     },
     "target": "ES5",
     "module": "commonjs",

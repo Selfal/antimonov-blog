@@ -1,6 +1,7 @@
 import './style.scss'
 import IMG from '../public/logo512.png'
 import { Button } from '@components'
+import { IconFigma, IconJs, IconBookmark } from './icons'
 
 export const App = () => {
   return (
@@ -12,6 +13,9 @@ export const App = () => {
       <h3>Test .env: {process.env.REACT_APP_ENV}</h3>
       <h3>Test .env.*: {process.env.REACT_APP_MODE}</h3>
       <Button>Hello</Button>
+      <IconFigma size="m" />
+      <IconJs size="xl" />
+      <IconBookmark size="m" />
     </>
   )
 }

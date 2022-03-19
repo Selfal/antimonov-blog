@@ -1,0 +1,43 @@
+$size-xs: 12px;
+$size-s: 16px;
+$size-m: 24px;
+$size-l: 32px;
+$size-xl: 40px;
+
+.icon {
+  display: inline-block;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: currentcolor;
+  }
+
+  &--size {
+    &_xs {
+      width: $size-xs;
+      height: $size-xs;
+    }
+    &_s {
+      width: $size-s;
+      height: $size-s;
+    }
+    &_m {
+      width: $size-m;
+      height: $size-m;
+    }
+    &_l {
+      width: $size-l;
+      height: $size-l;
+    }
+    &_xl {
+      width: $size-xl;
+      height: $size-xl;
+    }
+  }
+}
