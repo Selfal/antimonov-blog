@@ -12,12 +12,20 @@ const meta: Meta<Props> = {
       defaultValue: 'Click me',
     },
     view: {
-      control: { type: 'radio' },
+      control: { type: 'select' },
       defaultValue: 'primary',
     },
     size: {
-      control: { type: 'radio' },
+      control: { type: 'select' },
       defaultValue: 'medium',
+    },
+    disabled: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+    width: {
+      control: { type: 'select' },
+      defaultValue: 'default',
     },
   },
 }

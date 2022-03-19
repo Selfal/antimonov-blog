@@ -17,4 +17,4 @@ export const parameters = {
   },
 }
 
-addDecorator(withA11y)
+addDecorator(withA11y as any)

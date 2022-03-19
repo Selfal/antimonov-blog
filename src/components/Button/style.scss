@@ -1,33 +1,86 @@
-$primary-bg: #005eff;
-$ghost-bg: #222a40;
-$secondary-border: 1px solid #4d4d4d;
+$primary-bg: #1890ff;
+$primary-lighten-bg: lighten($primary-bg, 7%);
+$primary-darken-bg: darken($primary-bg, 5%);
+$secondary-bg: #4d4d4d;
+$secondary-lighten-bg: lighten($secondary-bg, 3%);
+$secondary-darken-bg: darken($secondary-bg, 5%);
+$secondary-border: 1px solid $secondary-bg;
 $white: #fff;
-$light-gray: #ededed;
+$white-darken: darken($white, 45%);
+$border-radius: 6px;
 
 .button {
+  display: inline-block;
+  box-sizing: border-box;
   border: none;
-  border-radius: 6px;
+  border-radius: $border-radius;
+  max-width: 100%;
+  cursor: pointer;
+  transition: all 0.15s linear;
 
   // VIEW
   &--primary {
     background: $primary-bg;
     color: $white;
+
+    &:hover {
+      background: $primary-lighten-bg;
+    }
+
+    &:active {
+      background: $primary-darken-bg;
+    }
   }
 
   &--secondary {
     background: transparent;
     border: $secondary-border;
-    color: $light-gray;
+    color: $white;
+
+    &:hover {
+      background: $secondary-lighten-bg;
+    }
+
+    &:active {
+      background: $secondary-darken-bg;
+    }
   }
 
   &--ghost {
-    background: $ghost-bg;
+    background: $secondary-bg;
     color: $white;
+
+    &:hover {
+      background: $secondary-lighten-bg;
+    }
+
+    &:active {
+      background: $secondary-darken-bg;
+    }
   }
 
   &--clear {
     background: transparent;
     color: $white;
+
+    &:hover {
+      background: $secondary-lighten-bg;
+    }
+
+    &:active {
+      background: $secondary-darken-bg;
+    }
+  }
+
+  &--disabled {
+    background: $secondary-bg;
+    color: $white-darken;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &--width-full {
+    width: 100%;
   }
 
   // SIZE

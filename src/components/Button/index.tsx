@@ -19,6 +19,8 @@ export type Props = {
   onClick?: React.EventHandler<React.MouseEvent>
   view?: keyof typeof VIEW_CLASS
   size?: keyof typeof SIZE_CLASS
+  disabled?: boolean
+  width?: 'default' | 'full'
 }
 
 export const Button = ({
@@ -26,6 +28,8 @@ export const Button = ({
   size = 'medium',
   children,
   onClick,
+  disabled,
+  width = 'default',
 }: Props) => {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (onClick) {
@@ -33,7 +37,10 @@ export const Button = ({
     }
   }
 
-  const classes = classNames(`button button--${view} button--${size}`)
+  const classes = classNames(`button button--${view} button--${size}`, {
+    'button--disabled': disabled,
+    'button--width-full': width === 'full',
+  })
 
   return (
     <button className={classes} onClick={onClick ? handleClick : undefined}>
