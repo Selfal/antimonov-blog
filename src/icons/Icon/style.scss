@@ -19,25 +19,20 @@ $size-xl: 40px;
   }
 
   &--size {
-    &_xs {
+    &-xs {
       width: $size-xs;
-      height: $size-xs;
     }
-    &_s {
+    &-s {
       width: $size-s;
-      height: $size-s;
     }
-    &_m {
+    &-m {
       width: $size-m;
-      height: $size-m;
     }
-    &_l {
+    &-l {
       width: $size-l;
-      height: $size-l;
     }
-    &_xl {
+    &-xl {
       width: $size-xl;
-      height: $size-xl;
     }
   }
 }

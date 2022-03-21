@@ -1,3 +1,4 @@
+import { IconComponent } from '@/icons/Icon'
 import classNames from 'classnames'
 import './style.scss'
 
@@ -9,42 +10,81 @@ enum VIEW_CLASS {
 }
 
 enum SIZE_CLASS {
-  small = 'small',
-  medium = 'medium',
-  large = 'large',
+  s = 's',
+  m = 'm',
+  l = 'l',
 }
 
 export type Props = {
-  children?: string
-  onClick?: React.EventHandler<React.MouseEvent>
+  label?: string
   view?: keyof typeof VIEW_CLASS
   size?: keyof typeof SIZE_CLASS
   disabled?: boolean
   width?: 'default' | 'full'
+  iconLeft?: IconComponent
+  iconRight?: IconComponent
+  onlyIcon?: boolean
+  onClick?: React.EventHandler<React.MouseEvent>
+}
+
+enum SIZE_ICON {
+  xs = 'xs',
+  s = 'xs',
+  m = 's',
+  l = 'm',
+}
+
+enum SIZE_ONLY_ICON {
+  xs = 'xs',
+  s = 's',
+  m = 'm',
+  l = 'm',
 }
 
 export const Button = ({
+  label,
   view = 'primary',
-  size = 'medium',
-  children,
-  onClick,
+  size = 'm',
   disabled,
   width = 'default',
+  iconLeft,
+  iconRight,
+  onlyIcon,
+  onClick,
 }: Props) => {
+  const withIcon = !!iconLeft || !!iconRight
+  const IconLeft = iconLeft
+  const IconRight = iconRight
+  const IconOnly = onlyIcon && (IconLeft || IconRight)
+  const IconSize = onlyIcon ? SIZE_ONLY_ICON[size] : SIZE_ICON[size]
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (onClick) {
       onClick(event)
     }
   }
 
-  const classes = classNames(`button button--${view} button--${size}`, {
-    'button--disabled': disabled,
-    'button--width-full': width === 'full',
-  })
+  const classes = classNames(
+    `button--size-${size} button button--view-${view}`,
+    {
+      'button--width-full': width === 'full',
+      'button--with-icon': withIcon,
+      'button--only-icon': IconOnly,
+      'button--disabled': disabled,
+    },
+  )
 
   return (
     <button className={classes} onClick={onClick ? handleClick : undefined}>
-      <span>{children}</span>
+      {IconOnly ? (
+        <IconOnly size={IconSize} className="button__icon" />
+      ) : (
+        <>
+          {IconLeft && <IconLeft size={IconSize} className="button__icon" />}
+          <span className="button__text">{label}</span>
+          {IconRight && <IconRight size={IconSize} className="button__icon" />}
+        </>
+      )}
     </button>
   )
 }

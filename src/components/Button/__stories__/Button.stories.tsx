@@ -1,15 +1,16 @@
 import { Button, Props } from '..'
 import { Meta, Story } from '@storybook/react'
+import { IconHome } from '../../../icons'
 
 const meta: Meta<Props> = {
   title: 'Button',
   component: Button,
   argTypes: {
     onClick: { action: 'clicked' },
-    children: {
+    label: {
       type: 'string',
       required: false,
-      defaultValue: 'Click me',
+      defaultValue: 'Click',
     },
     view: {
       control: { type: 'select' },
@@ -17,7 +18,7 @@ const meta: Meta<Props> = {
     },
     size: {
       control: { type: 'select' },
-      defaultValue: 'medium',
+      defaultValue: 'm',
     },
     disabled: {
       type: 'boolean',
@@ -26,6 +27,18 @@ const meta: Meta<Props> = {
     width: {
       control: { type: 'select' },
       defaultValue: 'default',
+    },
+    iconLeft: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+    iconRight: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+    onlyIcon: {
+      type: 'boolean',
+      defaultValue: false,
     },
   },
 }
@@ -42,20 +55,18 @@ export const Clear = Template.bind({})
 
 Primary.args = {
   view: 'primary',
-  size: 'medium',
+  iconLeft: Primary.args?.iconLeft && IconHome,
+  iconRight: Primary.args?.iconLeft && IconHome,
 }
 
 Secondary.args = {
   view: 'secondary',
-  size: 'medium',
 }
 
 Ghost.args = {
   view: 'ghost',
-  size: 'medium',
 }
 
 Clear.args = {
   view: 'clear',
-  size: 'medium',
 }

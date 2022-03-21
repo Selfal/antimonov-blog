@@ -10,7 +10,8 @@ $white-darken: darken($white, 45%);
 $border-radius: 6px;
 
 .button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   border: none;
   border-radius: $border-radius;
@@ -19,56 +20,58 @@ $border-radius: 6px;
   transition: all 0.15s linear;
 
   // VIEW
-  &--primary {
-    background: $primary-bg;
-    color: $white;
+  &--view {
+    &-primary {
+      background: $primary-bg;
+      color: $white;
 
-    &:hover {
-      background: $primary-lighten-bg;
+      &:hover {
+        background: $primary-lighten-bg;
+      }
+
+      &:active {
+        background: $primary-darken-bg;
+      }
     }
 
-    &:active {
-      background: $primary-darken-bg;
-    }
-  }
+    &-secondary {
+      background: transparent;
+      border: $secondary-border;
+      color: $white;
 
-  &--secondary {
-    background: transparent;
-    border: $secondary-border;
-    color: $white;
+      &:hover {
+        background: $secondary-lighten-bg;
+      }
 
-    &:hover {
-      background: $secondary-lighten-bg;
-    }
-
-    &:active {
-      background: $secondary-darken-bg;
-    }
-  }
-
-  &--ghost {
-    background: $secondary-bg;
-    color: $white;
-
-    &:hover {
-      background: $secondary-lighten-bg;
+      &:active {
+        background: $secondary-darken-bg;
+      }
     }
 
-    &:active {
-      background: $secondary-darken-bg;
+    &-ghost {
+      background: $secondary-bg;
+      color: $white;
+
+      &:hover {
+        background: $secondary-lighten-bg;
+      }
+
+      &:active {
+        background: $secondary-darken-bg;
+      }
     }
-  }
 
-  &--clear {
-    background: transparent;
-    color: $white;
+    &-clear {
+      background: transparent;
+      color: $white;
 
-    &:hover {
-      background: $secondary-lighten-bg;
-    }
+      &:hover {
+        background: $secondary-lighten-bg;
+      }
 
-    &:active {
-      background: $secondary-darken-bg;
+      &:active {
+        background: $secondary-darken-bg;
+      }
     }
   }
 
@@ -81,24 +84,60 @@ $border-radius: 6px;
 
   &--width-full {
     width: 100%;
+    gap: 0;
   }
 
   // SIZE
-  &--small {
-    padding: 0 16px;
-    height: 32px;
-    font-size: 14px;
+  &--size {
+    &-s {
+      padding: 0 16px;
+      height: 32px;
+      font-size: 14px;
+      gap: 12px;
+
+      &.button--only-icon {
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: 32px;
+        width: 32px;
+      }
+    }
+
+    &-m {
+      padding: 0 20px;
+      height: 40px;
+      font-size: 16px;
+      gap: 14px;
+
+      &.button--only-icon {
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    &-l {
+      padding: 0 24px;
+      height: 48px;
+      font-size: 18px;
+      gap: 18px;
+
+      &.button--only-icon {
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: 48px;
+        width: 48px;
+      }
+    }
   }
 
-  &--medium {
-    padding: 0 20px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  &--large {
-    padding: 0 24px;
-    height: 48px;
-    font-size: 18px;
+  &__text {
+    line-height: 1;
+    text-align: center;
+    width: 100%;
   }
 }
