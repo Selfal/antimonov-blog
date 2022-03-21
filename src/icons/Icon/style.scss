@@ -20,19 +20,24 @@ $size-xl: 40px;
 
   &--size {
     &-xs {
-      width: $size-xs;
+      min-width: $size-xs;
+      max-width: $size-xs;
     }
     &-s {
-      width: $size-s;
+      min-width: $size-s;
+      max-width: $size-s;
     }
     &-m {
-      width: $size-m;
+      min-width: $size-m;
+      max-width: $size-m;
     }
     &-l {
-      width: $size-l;
+      min-width: $size-l;
+      max-width: $size-l;
     }
     &-xl {
-      width: $size-xl;
+      min-width: $size-xl;
+      max-width: $size-xl;
     }
   }
 }

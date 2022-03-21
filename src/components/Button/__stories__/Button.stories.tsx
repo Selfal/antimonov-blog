@@ -1,6 +1,6 @@
 import { Button, Props } from '..'
 import { Meta, Story } from '@storybook/react'
-import { IconHome } from '../../../icons'
+import { IconJs } from '../../../icons'
 
 const meta: Meta<Props> = {
   title: 'Button',
@@ -45,7 +45,13 @@ const meta: Meta<Props> = {
 
 export default meta
 
-const Template: Story<Props> = (args) => <Button {...args} />
+const Template: Story<Props> = (args) => (
+  <Button
+    {...args}
+    iconLeft={args.iconLeft ? IconJs : undefined}
+    iconRight={args.iconRight ? IconJs : undefined}
+  />
+)
 
 export const Playground = Template.bind({})
 export const Primary = Template.bind({})
@@ -55,8 +61,6 @@ export const Clear = Template.bind({})
 
 Primary.args = {
   view: 'primary',
-  iconLeft: Primary.args?.iconLeft && IconHome,
-  iconRight: Primary.args?.iconLeft && IconHome,
 }
 
 Secondary.args = {
