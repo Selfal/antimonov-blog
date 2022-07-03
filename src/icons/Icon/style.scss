@@ -1,9 +1,3 @@
-$size-xs: 12px;
-$size-s: 16px;
-$size-m: 24px;
-$size-l: 32px;
-$size-xl: 40px;
-
 .icon {
   display: inline-block;
   overflow: hidden;
@@ -20,24 +14,24 @@ $size-xl: 40px;
 
   &--size {
     &-xs {
-      min-width: $size-xs;
-      max-width: $size-xs;
+      min-width: var(--graphics-size-xs);
+      max-width: var(--graphics-size-xs);
     }
     &-s {
-      min-width: $size-s;
-      max-width: $size-s;
+      min-width: var(--graphics-size-s);
+      max-width: var(--graphics-size-s);
     }
     &-m {
-      min-width: $size-m;
-      max-width: $size-m;
+      min-width: var(--graphics-size-m);
+      max-width: var(--graphics-size-m);
     }
     &-l {
-      min-width: $size-l;
-      max-width: $size-l;
+      min-width: var(--graphics-size-l);
+      max-width: var(--graphics-size-l);
     }
     &-xl {
-      min-width: $size-xl;
-      max-width: $size-xl;
+      min-width: var(--graphics-size-xl);
+      max-width: var(--graphics-size-xl);
     }
   }
 }

@@ -1,7 +1,10 @@
 export const cssLoader = (sourceMap = false) => ({
   test: /\.(sa|sc|c)ss$/,
   use: [
-    'style-loader',
+    {
+      loader: "style-loader",
+      options: { injectType: "singletonStyleTag" },
+    },
     {
       loader: 'css-loader',
       options: {

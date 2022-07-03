@@ -1,12 +1,12 @@
-import webpack from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import miniCss from 'mini-css-extract-plugin'
 import Dotenv from 'dotenv-webpack'
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import { babelLoader, fontsLoader, resourceLoader } from './loaders'
 
-const config: webpack.Configuration = {
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+
+const config = {
   entry: path.resolve(__dirname, '../src', 'index.tsx'),
   resolve: {
     plugins: [

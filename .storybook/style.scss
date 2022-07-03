@@ -1,0 +1,16 @@
+.storybook-custom-root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.theme--dark {
+  $base-color: #fff;
+  $secondary-color: rgba($base-color, 0.7);
+  $ghost-color: rgba($base-color, 0.4);
+  $warning-color: #e8af0e;
+  $alert-color: #e83d3d;
+  $link-color: #2891e0;
+  $second-link: #0c5084;
+  $success-color: #0fb981;
+}

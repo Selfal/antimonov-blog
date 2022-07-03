@@ -3,25 +3,10 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
-# Check Prettier
-yarn test:format ||
-(
-  echo '🤢🤮🤢🤮 Prettier Check Failed 🤢🤮🤢🤮
-    Run yarn format, add changes and try commit again.';
-  false;
-)
-
 # Check ESLint
 yarn test:lint ||
 (
   echo '😤🏀👋😤 ESLint Check Failed 😤🏀👋😤 
-    Make the required changes listed above, add changes and try to commit again.'
-  false; 
-)
-
-yarn test:style || 
-(
-  echo '😤🏀👋😤 Stylelint Check Failed 😤🏀👋😤 
     Make the required changes listed above, add changes and try to commit again.'
   false; 
 )

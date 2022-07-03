@@ -15,18 +15,6 @@ enum SIZE_CLASS {
   l = 'l',
 }
 
-export type Props = {
-  label?: string
-  view?: keyof typeof VIEW_CLASS
-  size?: keyof typeof SIZE_CLASS
-  disabled?: boolean
-  width?: 'default' | 'full'
-  iconLeft?: IconComponent
-  iconRight?: IconComponent
-  onlyIcon?: boolean
-  onClick?: React.EventHandler<React.MouseEvent>
-}
-
 enum SIZE_ICON {
   xs = 'xs',
   s = 'xs',
@@ -41,7 +29,22 @@ enum SIZE_ONLY_ICON {
   l = 'm',
 }
 
-export const Button = ({
+export type Props = {
+  label?: string
+  view?: keyof typeof VIEW_CLASS
+  size?: keyof typeof SIZE_CLASS
+  disabled?: boolean
+  width?: 'default' | 'full'
+  iconLeft?: IconComponent
+  iconRight?: IconComponent
+  onlyIcon?: boolean
+  onClick?: React.EventHandler<React.MouseEvent>
+  className?: string
+}
+
+export type ButtonComponent = React.FC<Props>
+
+export const Button: ButtonComponent = ({
   label,
   view = 'primary',
   size = 'm',
@@ -51,7 +54,8 @@ export const Button = ({
   iconRight,
   onlyIcon,
   onClick,
-}: Props) => {
+  className,
+}) => {
   const withIcon = !!iconLeft || !!iconRight
   const IconLeft = iconLeft
   const IconRight = iconRight
@@ -71,6 +75,7 @@ export const Button = ({
       'button--with-icon': withIcon,
       'button--only-icon': IconOnly,
       'button--disabled': disabled,
+      [`${className}`]: className,
     },
   )
 

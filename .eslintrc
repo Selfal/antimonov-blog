@@ -29,10 +29,17 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:eslint-comments/recommended",
-    "prettier",
-    "plugin:prettier/recommended"
   ],
   "rules": {
+    "max-len": ["error", {
+      "code": 120,
+      "tabWidth": 2, 
+      "ignoreComments": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreRegExpLiterals": true
+    }],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/no-var-requires": "off",

@@ -8,8 +8,7 @@
       "@components": ["src/components"],
       "@icons/*": ["src/icons/*"]
     },
-    "target": "ES5",
-    "module": "commonjs",
+    "target": "es6",
     "moduleResolution": "node",
     "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",
@@ -31,5 +30,5 @@
     "noImplicitThis": true
   },
   "include": ["src/**/*", "typings/**/*.d.ts"],
-  "exclude": ["src/**/*.spec.ts", "node_modules"]
+  "exclude": ["src/**/*.spec.ts", "node_modules", "webpack"]
 }
